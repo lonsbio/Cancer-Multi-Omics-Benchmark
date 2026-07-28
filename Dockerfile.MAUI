@@ -1,4 +1,24 @@
 FROM python:3.9-slim
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1 \
+    OMP_NUM_THREADS=1 \
+    OPENBLAS_NUM_THREADS=1 \
+    MKL_NUM_THREADS=1 \
+    NUMEXPR_NUM_THREADS=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        git \
+        build-essential \
+        gcc \
+        g++ \
+        gfortran \
+        libgomp1 \
+        libopenblas-dev \
+        liblapack-dev \
+        ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt/mlomics
 
