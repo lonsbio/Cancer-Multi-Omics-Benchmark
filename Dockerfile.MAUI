@@ -26,4 +26,6 @@ COPY . .
 
 RUN pip install git+https://github.com/BIMSBbioinfo/maui.git
 
+RUN pip install keras==2.3.1
+
 WORKDIR /app
