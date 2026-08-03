@@ -41,3 +41,6 @@ gdown                  # Google Drive download helper
 # Note: MAUI must be installed separately from source:
 #   pip install git+https://github.com/BIMSBbioinfo/maui.git
 # ──────────────────────────────────────────────
+
+#misc
+jupyter
